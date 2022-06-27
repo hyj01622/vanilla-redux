@@ -7,6 +7,8 @@
 ### store
 
 - store는 state가 저장되는 공간
+  - getState() : state 값을 가져온다.
+  - subscribe(func) : state 값의 변화가 있을 때 함수를 실행한다.
 
 ### reducer
 

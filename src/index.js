@@ -4,6 +4,8 @@ const plus = document.querySelector('.plus');
 const minus = document.querySelector('.minus');
 const num = document.querySelector('.num');
 
+num.innerText = 0;
+
 const countModifier = (count = 0, action) => {
   if (action.type === 'Add') {
     return count + 1;
@@ -16,6 +18,20 @@ const countModifier = (count = 0, action) => {
 
 const countStore = createStore(countModifier);
 
-countStore.dispatch({ type: 'Add' });
+const onChange = () => {
+  num.innerText = countStore.getState();
+};
 
-console.log(countStore.getState());
+const handleAdd = () => {
+  countStore.dispatch({ type: 'Add' });
+};
+
+const handleSubt = () => {
+  countStore.dispatch({ type: 'Subt' });
+};
+
+countStore.subscribe(onChange);
+
+plus.addEventListener('click', handleAdd);
+
+minus.addEventListener('click', handleSubt);
