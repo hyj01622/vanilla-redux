@@ -1,25 +1,13 @@
+import { legacy_createStore as createStore } from 'redux';
+
 const plus = document.querySelector('.plus');
 const minus = document.querySelector('.minus');
 const num = document.querySelector('.num');
 
-let count = 0;
-
-num.innerText = count;
-
-const updateText = () => {
-  num.innerText = count;
+const countModifier = (state = 0) => {
+  return state;
 };
 
-const add = () => {
-  count = count + 1;
-  updateText();
-};
+const countStore = createStore(countModifier);
 
-const subt = () => {
-  count = count - 1;
-  updateText();
-};
-
-plus.addEventListener('click', add);
-
-minus.addEventListener('click', subt);
+console.log(countStore.getState());
