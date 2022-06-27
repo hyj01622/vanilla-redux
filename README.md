@@ -2,15 +2,15 @@
 
 ## Redux
 
-Redux는 state 관리하는 도구
+- Redux는 state 관리하는 도구
 
 ### store
 
-store는 state가 저장되는 공간
+- store는 state가 저장되는 공간
 
 ### reducer
 
-reducer는 state를 바꿀 수 있는 유일한 함수
+- reducer는 state를 바꿀 수 있는 유일한 함수
 
 reducer에는 2개의 파라미터가 들어가는데 첫번째 파라미터는 state, 두번째 파라미터는 action이 들어간다.
 
@@ -24,7 +24,7 @@ store.dispatch({key : value})
 
 위의 코드처럼 dispatch에 키값 쌍을 넣어주면 reducer의 action 파라미터로 값이 넘어온다.
 
-- 예시
+> 예시
 
 ```
 const countModifier = (count = 0, action) => {
